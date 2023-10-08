@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>HomePage</title>
+</head>
+<body>
+{% block content %}
+   <p>Welcome to home...</p>
+    <a href="{% url 'create-bank' %}">Add New Bank</a>
+    <br>
+    <br>
+    <br>
+    {% for b in banks %}
+        Bank Details: <br>
+        Name: {{ b.name }} <br>
+        CEO Name: {{ b.CEO_name }} <br>
+        Location: {{ b.location }} <br>
+        Number of branches: {{ b.number_of_branches }} <br>
+        Number of employees: {{ b.number_of_employees }} <br>
+        <a href="{% url 'update-bank' b.id %}">update info</a><br>
+        <a href="{% url 'delete-bank' b.id %}">delete info</a><br>
+        <br>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

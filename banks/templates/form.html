@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FormPage</title>
+</head>
+<body>
+{% block content %}
+    <form method="get">
+    {{ form.as_ul }}
+    <button type="submit">OK</button>
+
+    </form>
+{% endblock %}
+</body>
+</html>
